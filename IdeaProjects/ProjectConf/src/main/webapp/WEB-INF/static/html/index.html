@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+<script type="text/javascript" src="static/scripts/index.js"></script>
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Wyświetlanie Ani</title>
+</head>
+<body>
+<div ng-app="myApp">
+    <div class="col-sm-4">
+        <div ng-controller="showController">
+            <button type="submit" class="btn btn-default" ng-click="getComments()" data-toggle="collapse"
+                    data-target="#demo"><span class="glyphicon glyphicon-user"></span> Pokaż komentarze (przyklad)
+            </button>
+            <button type="submit" class="btn btn-default" ng-click="setComments()" data-toggle="collapse"
+                    data-target="#demo2"><span class="glyphicon glyphicon-user"></span> Dodaj komentarze (przyklad)
+            </button>
+            <div id="demo" class="collapse">
+                <table class="table table-striped">
+                    <thead>
+                    <tr>
+                        <th>Id:</th>
+                        <th>Imię:</th>
+                        <th>Wiek:</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr ng-repeat="comment in comments">
+                        <td>{{comment.uzytkownik_id_uzytkownika}}</td>
+                        <td>{{comment.zawartosc}}</td>
+                        <td>{{comment.czas_dodania}}</td>
+                        <td>{{comment.id_komentarza}}</td>
+
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div id="demo2" class="collapse">
+                <table class="table table-striped">
+                    <thead>
+                    <tr>
+                        <th>Zapytanie wyslane.</th>
+
+                    </tr>
+                    </thead>
+
+                </table>
+            </div>
+            <div>
+
+                <form>
+                    <p>Komentarz: <input type="text" name="comment" ng-model="comment.zawartosc"  required /></p>
+                    <button ng-click="SendComment(comment)"  type="submit">Komentuj!</button>
+                    <hr />
+                    {{ comment | json}}
+                </form>
+
+        </div>
+    </div>
+</div>
+</body>
+</html>
