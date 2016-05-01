@@ -1,6 +1,6 @@
 package com.proj.Model;
 
-        import javax.persistence.*;
+import javax.persistence.*;
 
 /**
  * Created by wincenty on 4/28/2016.

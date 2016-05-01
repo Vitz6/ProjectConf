@@ -20,8 +20,15 @@ public class EmployeeController {
     @Autowired
     private EmployeeDao employeeDao;
 
+   // @RequestMapping(value = "/employees", method = RequestMethod.GET)
+   // public List<Employee> getEmployees() {
+    //    return employeeDao.findAllEmployees();
+    //}
+
     @RequestMapping(value = "/employees", method = RequestMethod.GET)
-    public List<Employee> getEmployees() {
-        return employeeDao.findAllEmployees();
+    public List<Employee> getEmployeesByAge() {
+        return employeeDao.findByAge(20);
     }
+
+
 }
