@@ -14,7 +14,6 @@ import java.util.List;
  */
 @Repository
 public class UserDao {
-/*
     @PersistenceContext
     EntityManager entityManager;
 
@@ -42,5 +41,4 @@ public class UserDao {
         entityManager.persist(user);
     }
 
-    */
 }

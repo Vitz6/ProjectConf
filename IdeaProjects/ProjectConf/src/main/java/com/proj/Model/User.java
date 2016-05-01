@@ -11,8 +11,15 @@ public class User {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name="id_uzytkownika")
+    @Column(name="id_uzytkownik")
     private int id;
+
+    @Column(name="login")
+    private String login;
+
+
+    @Column(name="haslo")
+    private String password;
 
     @Column(name="imie")
     private String firstName;
@@ -30,7 +37,7 @@ public class User {
     private String companyName;
 
     @Column(name="aktywnosc")
-    private String activity;
+    private int activity;
 
     @Column(name="oplata")
     private float payment;
@@ -66,11 +73,11 @@ public class User {
         this.reviewer = reviewer;
     }
 
-    public String getActivity() {
+    public int getActivity() {
         return activity;
     }
 
-    public void setActivity(String activity) {
+    public void setActivity(int activity) {
         this.activity = activity;
     }
 

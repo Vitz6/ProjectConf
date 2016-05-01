@@ -17,5 +17,10 @@ public class IndexController {
         return "static/html/index.html";
     }
 
+    @RequestMapping(value = "/register", method = RequestMethod.GET)
+    public String getRegister() {
+        return "static/html/register.html";
+    }
+
 
 }

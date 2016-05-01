@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+<script type="text/javascript" src="static/scripts/register.js"></script>
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Register EXAMPLE</title>
+</head>
+<body>
+<div ng-app="myApp">
+    <div class="col-sm-4">
+        <div ng-controller="showController">
+
+
+            <form class="form-horizontal">
+                <fieldset>
+
+                    <!-- Form Name -->
+                    <legend>Rejestracja użytkownika</legend>
+
+
+
+                    <!-- Text input-->
+                    <div class="form-group">
+                        <label class="col-md-4 control-label" for="login">Login</label>
+                        <div class="col-md-4">
+                            <input id="login" name="login" placeholder="login" class="form-control input-md" required="" type="text"  ng-model="user.login">
+                            <span class="help-block">max 30 znakow</span>
+                        </div>
+                    </div>
+
+                    <!-- Password input-->
+                    <div class="form-group">
+                        <label class="col-md-4 control-label" for="haslo">Haslo</label>
+                        <div class="col-md-4">
+                            <input id="haslo" name="haslo" placeholder="haslo" class="form-control input-md" required="" type="password"  ng-model="user.password">
+                            <span class="help-block">max 30 znakow</span>
+                        </div>
+                    </div>
+
+                    <!-- Text input-->
+                    <div class="form-group">
+                        <label class="col-md-4 control-label" for="firstName">Imie</label>
+                        <div class="col-md-4">
+                            <input id="firstName" name="firstName" placeholder="imie" class="form-control input-md" required="" type="text"  ng-model="user.firstName">
+                            <span class="help-block">max 30 znakow</span>
+                        </div>
+                    </div>
+
+                    <!-- Text input-->
+                    <div class="form-group">
+                        <label class="col-md-4 control-label" for="lastName">Nazwisko</label>
+                        <div class="col-md-4">
+                            <input id="lastName" name="lastName" placeholder="nazwisko" class="form-control input-md" required="" type="text"  ng-model="user.lastName">
+                            <span class="help-block">max 30 znakow</span>
+                        </div>
+                    </div>
+
+                 <!-- Text input
+                    <div class="form-group">
+                        <label class="col-md-4 control-label" for="activity">Aktywność</label>
+                        <div class="col-md-4">
+                            <input id="activity" name="activity" placeholder="aktywnosc" class="form-control input-md" required="" type="text"  ng-model="user.activity">
+                            <span class="help-block">max 30 znakow</span>
+                        </div>
+                    </div>-->
+
+                    <!-- Text input-->
+                    <div class="form-group">
+                        <label class="col-md-4 control-label" for="phone">Telefon</label>
+                        <div class="col-md-4">
+                            <input id="phone" name="phone" placeholder="telefon" class="form-control input-md" type="text"  ng-model="user.phone">
+                            <span class="help-block">*pole nieobowiazkowe</span>
+                        </div>
+                    </div>
+
+                    <!-- Text input-->
+                    <div class="form-group">
+                        <label class="col-md-4 control-label" for="adress">Adres</label>
+                        <div class="col-md-4">
+                            <input id="adress" name="adress" placeholder="adres"  class="form-control input-md"  required="" type="text"  ng-model="user.adress">
+                            <span class="help-block">poscode ulica numer domu</span>
+                        </div>
+                    </div>
+
+                    <!-- Text input-->
+                    <div class="form-group">
+                        <label class="col-md-4 control-label" for="companyName">Nazwa firym</label>
+                        <div class="col-md-4">
+                            <input id="companyName" name="companyName" placeholder="nazwa fiarmy" class="form-control input-md" type="text"  ng-model="user.companyName">
+                            <span class="help-block">*pole nieobowiazkowe</span>
+                        </div>
+                    </div>
+
+                    <!-- Text input-->
+                    <div class="form-group">
+                        <label class="col-md-4 control-label" for="description">Opis</label>
+                        <div class="col-md-4">
+                            <input id="description" name="description" placeholder="opis" class="form-control input-md" type="text"  ng-model="user.description">
+                            <span class="help-block">max 300 znakow</span>
+                        </div>
+                    </div>
+
+                    <!-- Button (Double) -->
+                    <div class="form-group">
+                        <label class="col-md-4 control-label" for="registerButton">Rejestruj</label>
+                        <div class="col-md-8">
+                            <button id="registerButton" name="registerButton" class="btn btn-success" ng-click="setUser(user)">Rejestruj!</button>
+                            <button id="clearButton" name="clearButton" class="btn btn-danger">Wyczyść!</button>
+
+                        </div>
+<br>
+                        {{ user | json}}
+
+                    </div>
+
+                </fieldset>
+            </form>
+
+
+        </div>
+        </div>
+    </div>
+</body>
+</html>

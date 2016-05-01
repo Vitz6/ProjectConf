@@ -18,7 +18,7 @@ import java.util.List;
 @RestController
 public class UserController {
 
-  /*  @Autowired
+    @Autowired
     private UserDao userDao;
 
     @RequestMapping(value = "/getusers", method = RequestMethod.GET)
@@ -28,9 +28,10 @@ public class UserController {
 
     @RequestMapping(value = "/setuser", method = RequestMethod.POST)
     public void setComment(@RequestBody User user) {userDao.createUser(user);}
+  //  return "Dodano usera";}
 
     @RequestMapping(value = "/deleteuser", method = RequestMethod.POST)
     public void delUser(@RequestBody User user) {userDao.deleteUser(user);}
 
-    */
+
 }

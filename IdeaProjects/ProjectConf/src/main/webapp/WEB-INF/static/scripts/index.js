@@ -20,7 +20,7 @@ app.controller('showController', function ($scope, $http) {
 
 
 
-    $scope.SendComment= function (comment) {
+    $scope.sendComment= function (comment) {
         //alert(comment);
         return $http.post('setcomment', comment);
     }

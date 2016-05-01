@@ -2,9 +2,7 @@ package com.proj.Model;
 
 import org.hibernate.validator.constraints.NotEmpty;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 /**
  * Created by wincenty on 4/27/2016.
@@ -13,6 +11,8 @@ import javax.persistence.Table;
 @Table(name="sesja")
 public class Session {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name="id_sesji")
     private int id;
 

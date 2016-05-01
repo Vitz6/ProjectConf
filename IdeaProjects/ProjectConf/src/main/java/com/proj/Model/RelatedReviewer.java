@@ -12,7 +12,7 @@ public class RelatedReviewer {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-  @Column(name="id_przypisania")
+    @Column(name="id_przypisania")
     private int id;
 
     @NotNull
