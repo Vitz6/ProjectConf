@@ -1,10 +1,77 @@
 <!DOCTYPE html>
 <html lang="en">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+<script type="text/javascript" src="static/scripts/login.js"></script>
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Logowanie!</title>
 </head>
 <body>
 
+
+
+<div ng-app="myApp" ng-controller="myCtrl">
+    <form class="form-horizontal">
+        <fieldset>
+
+
+            <!-- Form Name -->
+            <legend>Logowanie</legend>
+
+            <!-- Text input-->
+            <div class="form-group">
+                <label class="col-md-4 control-label" for="login">Login</label>
+                <div class="col-md-4">
+                    <input id="login" name="login" placeholder="login" class="form-control input-md" required=""
+                           type="text" ng-model="user.login">
+
+                </div>
+            </div>
+
+            <!-- Password input-->
+            <div class="form-group">
+                <label class="col-md-4 control-label" for="password">Hasło</label>
+                <div class="col-md-4">
+                    <input id="password" name="password" placeholder="hasło" class="form-control input-md" required=""
+                           type="password" ng-model="user.password">
+
+                </div>
+            </div>
+
+            <!-- Button -->
+            <div class="form-group">
+                <label class="col-md-4 control-label" for="login">Logowanie</label>
+                <div class="col-md-4">
+                    <button id="sendLogin" name="sendLogin" class="btn btn-success" ng-click="loginUser(user)">
+                        Zaloguj!
+                    </button>
+                </div>
+
+            </div>
+
+            <div class="alert alert-success">
+                <strong>{{ alert }}</strong>
+            </div>
+
+
+        </fieldset>
+
+
+
+    </form>
+
+
+
+    <br><br><br><br><br><br><br><br><br>
+    {{ user | json}}
+
+</div>
+
 </body>
 </html>
+
+

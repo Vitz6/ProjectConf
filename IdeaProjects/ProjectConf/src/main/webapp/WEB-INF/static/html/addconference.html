@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+<script type="text/javascript" src="static/scripts/conference.js"></script>
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Nowa konferencja!</title>
+</head>
+<body>
+
+
+<div ng-app="myApp" ng-controller="myCtrl">
+    <form class="form-horizontal">
+        <fieldset>
+
+
+        <!-- Form Name -->
+        <legend>Nowa konferencja</legend>
+
+        <!-- Text input-->
+        <div class="form-group">
+            <label class="col-md-4 control-label" for="titleConf">Temat</label>
+            <div class="col-md-4">
+                <input id="titleConf" name="titleConf" placeholder="temat konferencji" class="form-control input-md" required="" type="text"  ng-model="conference.name">
+                <span class="help-block">max 30 znakow</span>
+            </div>
+        </div>
+
+        <!-- Text input-->
+        <div class="form-group">
+            <label class="col-md-4 control-label" for="startDate">Data rozpoczęcia</label>
+            <div class="col-md-4">
+                <input id="startDate" name="startDate" placeholder="dd-mm-yyyy" class="form-control input-md" type="text"  ng-model="conference.dateStart">
+                <span class="help-block">*podaj date w formacie dd-mm-yyyy</span>
+            </div>
+        </div>
+
+            <!-- Text input-->
+            <div class="form-group">
+                <label class="col-md-4 control-label" for="duration">ID kosztu</label>
+                <div class="col-md-4">
+                    <input id="expense" name="..." placeholder="..." class="form-control input-md" type="text"  ng-model="conference.expenseId">
+                    <span class="help-block">*pole nieobowiazkowe</span>
+                </div>
+            </div>
+
+
+        <!-- Text input-->
+        <div class="form-group">
+            <label class="col-md-4 control-label" for="duration">Czas trwania</label>
+            <div class="col-md-4">
+                <input id="duration" name="duration" placeholder="czas trwania konferencji" class="form-control input-md" type="text"  ng-model="conference.duration">
+                <span class="help-block">*pole nieobowiazkowe</span>
+            </div>
+        </div>
+
+        <!-- Text input-->
+        <div class="form-group">
+            <label class="col-md-4 control-label" for="placement">Miejsce</label>
+            <div class="col-md-4">
+                <input id="placement" name="placement" placeholder="miejsce odbycia się konferencji" class="form-control input-md" required="" type="text"  ng-model="conference.adress">
+                <span class="help-block">max 30 znakow</span>
+            </div>
+        </div>
+
+        <!-- Text input-->
+        <div class="form-group">
+            <label class="col-md-4 control-label" for="quantity">Liczba wystąpień</label>
+            <div class="col-md-4">
+                <input id="quantity" name="quantity" placeholder="liczba wystąpień podczas konferencji" class="form-control input-md" required="" type="text"   ng-model="conference.numberof">
+                <span class="help-block">*podaj liczbe</span>
+            </div>
+        </div>
+
+        <!-- Text input-->
+        <div class="form-group">
+            <label class="col-md-4 control-label" for="amountMemberse">Liczba uczestników</label>
+            <div class="col-md-4">
+                <input id="amountMemberse" name="amountMemberse" placeholder="maksymalna liczba uczestników" class="form-control input-md" required="" type="text"  ng-model="conference.members">
+                <span class="help-block">*podaj liczbe</span>
+            </div>
+        </div>
+
+
+        <!-- Text input-->
+        <div class="form-group">
+            <label class="col-md-4 control-label" for="accommodation">Zakwaterowanie</label>
+            <div class="col-md-4">
+                <input id="accommodation" name="accommodation" placeholder="możliwe opcje zakwaterowania" class="form-control input-md" type="text"  ng-model="conference.accommodation">
+                <span class="help-block">max 300 znakow</span>
+            </div>
+        </div>
+
+        <!-- Button -->
+        <div class="form-group">
+            <label class="col-md-4 control-label" for="acceptConf">Dodaj konferencje</label>
+            <div class="col-md-4">
+                <button id="acceptConf" name="acceptConf" class="btn btn-primary"  ng-click="addConf(conference)">Zatwierdz</button>
+            </div>
+        </div>
+
+    </fieldset>
+        <div class="alert alert-success">
+            <strong>{{ alert }}</strong>
+        </div>
+
+    </form>
+
+
+
+
+<br><br><br><br><br><br><br><br><br>
+{{ conference | json}}
+</div>
+
+
+
+</body>
+</html>

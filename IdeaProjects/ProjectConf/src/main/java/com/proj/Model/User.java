@@ -1,12 +1,17 @@
 package com.proj.Model;
 
+import org.hibernate.annotations.NotFound;
+import org.hibernate.validator.constraints.NotEmpty;
+
 import javax.persistence.*;
 
 /**
  * Created by wincenty on 4/28/2016.
  */
+
 @Entity
-@Table(name="uzytkownik")
+@Table(name="uzytkownik", uniqueConstraints={@UniqueConstraint(columnNames={"login"})})
+
 public class User {
 
     @Id
@@ -14,9 +19,8 @@ public class User {
     @Column(name="id_uzytkownik")
     private int id;
 
-    @Column(name="login")
+    @Column(name="login"  ,unique =true)
     private String login;
-
 
     @Column(name="haslo")
     private String password;
@@ -127,6 +131,22 @@ public class User {
 
     public void setId(int id) {
         this.id = id;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public String getLogin() {
+        return login;
+    }
+
+    public void setLogin(String login) {
+        this.login = login;
     }
 }
 

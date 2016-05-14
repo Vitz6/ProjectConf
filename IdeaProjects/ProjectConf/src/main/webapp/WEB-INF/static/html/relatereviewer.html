@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+<script type="text/javascript" src="static/scripts/conference.js"></script>
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Nowa konferencja!</title>
+</head>
+<body>
+
+
+
+
+
+<form class="form-horizontal">
+    <fieldset>
+
+        <!-- Form Name -->
+        <legend>Przydzielanie recezentów do artykułu</legend>
+
+        <!-- Select Basic -->
+        <div class="form-group">
+            <label class="col-md-4 control-label" for="selectbasic">Artykuł</label>
+            <div class="col-md-5">
+                <select id="selectbasic" name="selectbasic" class="form-control">
+                    <option value="1">ładowanie</option>
+                    <option value="2">dynamiczne</option>
+                    <option value="3">z bazy</option>
+                </select>
+            </div>
+        </div>
+
+        <!-- Select Multiple -->
+        <div class="form-group">
+            <label class="col-md-4 control-label" for="reviewer">Rezenci ( wybierz min 3)</label>
+            <div class="col-md-5">
+                <select id="reviewer" name="reviewer" class="form-control" multiple="multiple">
+                    <option value="1">raz</option>
+                    <option value="2">dwa</option>
+                    <option value="3">trzy</option>
+                    <option value="4">ladowanie</option>
+                    <option value="5">dynamiczne</option>
+                </select>
+            </div>
+        </div>
+
+        <!-- Button -->
+        <div class="form-group">
+            <label class="col-md-4 control-label" for="setReviewer">Przydziel recenzentów:</label>
+            <div class="col-md-4">
+                <button id="setReviewer" name="setReviewer" class="btn btn-primary">Zatwierdz</button>
+            </div>
+        </div>
+
+    </fieldset>
+</form>
+
+
+
+</body>
+</html>

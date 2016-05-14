@@ -8,14 +8,10 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Register EXAMPLE</title>
+    <title>Rejestracja uzytkownika</title>
 </head>
 <body>
-<div ng-app="myApp">
-    <div class="col-sm-4">
-        <div ng-controller="showController">
-
-
+<div ng-app="myApp" ng-controller="myCtrl">
             <form class="form-horizontal">
                 <fieldset>
 
@@ -60,15 +56,6 @@
                         </div>
                     </div>
 
-                 <!-- Text input
-                    <div class="form-group">
-                        <label class="col-md-4 control-label" for="activity">Aktywność</label>
-                        <div class="col-md-4">
-                            <input id="activity" name="activity" placeholder="aktywnosc" class="form-control input-md" required="" type="text"  ng-model="user.activity">
-                            <span class="help-block">max 30 znakow</span>
-                        </div>
-                    </div>-->
-
                     <!-- Text input-->
                     <div class="form-group">
                         <label class="col-md-4 control-label" for="phone">Telefon</label>
@@ -109,21 +96,30 @@
                     <div class="form-group">
                         <label class="col-md-4 control-label" for="registerButton">Rejestruj</label>
                         <div class="col-md-8">
-                            <button id="registerButton" name="registerButton" class="btn btn-success" ng-click="setUser(user)">Rejestruj!</button>
+                            <button id="registerButton" name="registerButton" data-toggle="collapse"
+                                    data-target="#reg" class="btn btn-success" ng-click="setUser(user)">Rejestruj!</button>
                             <button id="clearButton" name="clearButton" class="btn btn-danger">Wyczyść!</button>
 
                         </div>
-<br>
-                        {{ user | json}}
 
                     </div>
 
+                    <div class="alert alert-success">
+                        <strong>{{alert}}</strong>
+
+                    </div>
                 </fieldset>
+
+
             </form>
 
 
+
+    <br><br><br><br><br><br><br><br><br>
+
+            {{ user | json}}
+
         </div>
-        </div>
-    </div>
+
 </body>
 </html>

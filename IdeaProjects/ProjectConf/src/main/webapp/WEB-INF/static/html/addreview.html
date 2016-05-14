@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+<script type="text/javascript" src="static/scripts/conference.js"></script>
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Nowa konferencja!</title>
+</head>
+<body>
+
+
+
+<form class="form-horizontal">
+    <fieldset>
+
+        <!-- Form Name -->
+        <legend>Nowa recenzja!</legend>
+
+        <!-- Text input-->
+        <div class="form-group">
+            <label class="col-md-4 control-label" for="description1">Ocena</label>
+            <div class="col-md-5">
+                <input id="description1" name="description1" placeholder="ocena" class="form-control input-md" required="" type="text">
+                <span class="help-block">*widoczne przez autora i organizatora</span>
+            </div>
+        </div>
+
+        <!-- Text input-->
+        <div class="form-group">
+            <label class="col-md-4 control-label" for="comment">Komentarz</label>
+            <div class="col-md-5">
+                <input id="comment" name="comment" placeholder="komentarz" class="form-control input-md" required="" type="text">
+                <span class="help-block">*widoczne dla organizatora, niewidoczne dla autora</span>
+            </div>
+        </div>
+
+        <!-- Select Basic -->
+        <div class="form-group">
+            <label class="col-md-4 control-label" for="rate1">Zgodność artykułu z tematem  konferencji</label>
+            <div class="col-md-2">
+                <select id="rate1" name="rate1" class="form-control">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                </select>
+            </div>
+        </div>
+
+        <!-- Select Basic -->
+        <div class="form-group">
+            <label class="col-md-4 control-label" for="rate2">Wartość merytoryczna artykułu</label>
+            <div class="col-md-2">
+                <select id="rate2" name="rate2" class="form-control">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                </select>
+            </div>
+        </div>
+
+        <!-- Select Basic -->
+        <div class="form-group">
+            <label class="col-md-4 control-label" for="rate3">Werdykt</label>
+            <div class="col-md-4">
+                <select id="rate3" name="rate3" class="form-control">
+                    <option value="1">przyjąć</option>
+                    <option value="2">modyfikować</option>
+                    <option value="3">odrzucić</option>
+                </select>
+            </div>
+        </div>
+
+        <!-- Button -->
+        <div class="form-group">
+            <label class="col-md-4 control-label" for="acceptReview">Dodaj recenzje</label>
+            <div class="col-md-4">
+                <button id="acceptReview" name="acceptReview" class="btn btn-primary">Zatwierdz</button>
+            </div>
+        </div>
+
+    </fieldset>
+</form>
+
+
+</body>
+</html>

@@ -1,14 +1,13 @@
 var app = angular.module('myApp', []);
 app.controller('myCtrl', function ($scope, $http) {
 
-
-    var setUser = 'setuser';
-
+    
     $scope.alert="";
 
-    $scope.setUser= function (user) {
-        $http.post("/setuser", user) .then(function(response) {
+    $scope.addConf= function (conference) {
+        $http.post("/setconference", conference) .then(function(response) {
             $scope.alert = response.data.toString();
+
         });
 
     }
@@ -16,6 +15,7 @@ app.controller('myCtrl', function ($scope, $http) {
 
 });
 
+
 /**
- * Created by wincenty on 5/1/2016.
+ * Created by wincenty on 5/4/2016.
  */

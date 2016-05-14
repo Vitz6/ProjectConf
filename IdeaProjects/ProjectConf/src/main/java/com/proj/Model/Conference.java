@@ -15,33 +15,36 @@ public class Conference {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "id_konferencji")
+    @Column(name = "id_konferencja")
     private int id;
 
     @Column(name = "nazwa")
     private String name;
 
     @Column(name = "czas_rozpoczecia")
-    @DateTimeFormat(pattern = "dd-mm-yyyy")
-    private Date dateStart;
+   // @DateTimeFormat(pattern = "dd-mm-yyyy")
+    private  String dateStart;
 
     @Column(name = "czas_trwania_dni")
     private int duration;
 
 
     @Column(name = "czas_zakonczenia")
-    @DateTimeFormat(pattern = "dd-mm-yyyy")
+    @DateTimeFormat(pattern = "yyyy-mm-dd")
     private Date dateEnd;
 
     @Column(name = "adres")
-    private String adres;
+    private String adress;
 
     @NotNull
-    @Column(name = "koszt")
+    @Column(name = "id_koszt")
     private int expenseId;
 
     @Column(name = "ilosc_uczestnikow")
     private int members;
+
+    @Column(name = "liczba_wystapien")
+    private int numberof;
 
     public int getId() {
         return id;
@@ -59,11 +62,11 @@ public class Conference {
         this.name = name;
     }
 
-    public Date getDateStart() {
+    public String getDateStart() {
         return dateStart;
     }
 
-    public void setDateStart(Date dateStart) {
+    public void setDateStart(String dateStart) {
         this.dateStart = dateStart;
     }
 
@@ -83,13 +86,6 @@ public class Conference {
         this.dateEnd = dateEnd;
     }
 
-    public String getAdres() {
-        return adres;
-    }
-
-    public void setAdres(String adres) {
-        this.adres = adres;
-    }
 
     public int getExpenseId() {
         return expenseId;
@@ -105,5 +101,21 @@ public class Conference {
 
     public void setMembers(int members) {
         this.members = members;
+    }
+
+    public String getAdress() {
+        return adress;
+    }
+
+    public void setAdress(String adress) {
+        this.adress = adress;
+    }
+
+    public int getNumberof() {
+        return numberof;
+    }
+
+    public void setNumberof(int numberof) {
+        this.numberof = numberof;
     }
 }

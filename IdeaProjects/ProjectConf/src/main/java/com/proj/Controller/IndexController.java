@@ -18,8 +18,33 @@ public class IndexController {
     }
 
     @RequestMapping(value = "/register", method = RequestMethod.GET)
-    public String getRegister() {
+    public String getRegisterForm() {
         return "static/html/register.html";
+    }
+
+    @RequestMapping(value = "/login", method = RequestMethod.GET)
+    public String getLoginForm() {
+        return "static/html/login.html";
+    }
+
+    @RequestMapping(value = "/newconf", method = RequestMethod.GET)
+    public String getNewConfForm() {
+        return "static/html/addconference.html";
+    }
+
+    @RequestMapping(value = "/newreview", method = RequestMethod.GET)
+    public String getNewReviewForm() {
+        return "static/html/addreview.html";
+    }
+
+    @RequestMapping(value = "/relatereviewer", method = RequestMethod.GET)
+    public String getRelaterReviewerForm() {
+        return "static/html/relatereviewer.html";
+    }
+
+    @RequestMapping(value = "/newarticle", method = RequestMethod.GET)
+    public String getNewArticleForm() {
+        return "static/html/addarticle.html";
     }
 
 
