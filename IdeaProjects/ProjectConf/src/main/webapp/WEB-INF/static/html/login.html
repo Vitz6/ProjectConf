@@ -27,7 +27,7 @@
                 <label class="col-md-4 control-label" for="login">Login</label>
                 <div class="col-md-4">
                     <input id="login" name="login" placeholder="login" class="form-control input-md" required=""
-                           type="text" ng-model="user.login">
+                           type="text" ng-model="username">
 
                 </div>
             </div>
@@ -37,7 +37,7 @@
                 <label class="col-md-4 control-label" for="password">Hasło</label>
                 <div class="col-md-4">
                     <input id="password" name="password" placeholder="hasło" class="form-control input-md" required=""
-                           type="password" ng-model="user.password">
+                           type="password" ng-model="password">
 
                 </div>
             </div>
@@ -46,7 +46,7 @@
             <div class="form-group">
                 <label class="col-md-4 control-label" for="login">Logowanie</label>
                 <div class="col-md-4">
-                    <button id="sendLogin" name="sendLogin" class="btn btn-success" ng-click="loginUser(user)">
+                    <button id="sendLogin" name="sendLogin" class="btn btn-success" ng-click="loginUser()">
                         Zaloguj!
                     </button>
                 </div>

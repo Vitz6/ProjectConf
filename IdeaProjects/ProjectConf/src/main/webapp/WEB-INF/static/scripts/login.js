@@ -1,20 +1,16 @@
 var app = angular.module('myApp', []);
-app.controller('myCtrl', function ($scope, $http) {
-    
-    var setUser = 'loginuser';
+app.controller('myCtrl', function ($scope, $http, $location) {
 
-    $scope.alert="";
+    var redirectionUrl = '/register';
 
-    $scope.loginUser= function (user) {
-          $http.post("/loginuser", user) .then(function(response) {
-            $scope.alert = response.data.toString();
-
-        });
-
+    $scope.loginUser = function () {
+        var data = "username=" + $scope.username + "&password=" + $scope.password;
+        $http.post('perform_login', data, {
+            headers: {
+                "content-type": "application/x-www-form-urlencoded"
+            }
+        }).success(function (data) {
+            window.location.href = redirectionUrl;
+        })
     }
-
-
-})
-;
-
-
+});
