@@ -33,11 +33,6 @@ public class UserDao {
 
 
     @Transactional
-    public void deleteUser(User user) {
-        Query query = entityManager.createQuery("DELETE FROM User user WHERE user.id=" + user.getId());
-    }
-
-    @Transactional
     public User showUser(int id) {
         User user = new User();
         user = entityManager.find(User.class, id);

@@ -4,20 +4,18 @@
 <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
 <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-<script type="text/javascript" src="static/scripts/conference.js"></script>
+<script type="text/javascript" src="/static/scripts/article.js"></script>
 <head>
     <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Nowy artykuł!</title>
+    <title>Nowy artykul!</title>
 </head>
 <body>
 
 
-
-
-<form class="form-horizontal">
-    <fieldset>
-
+<div ng-app="myApp" ng-controller="myCtrl" >
+    <form class="form-horizontal">
+        <fieldset>
         <!-- Form Name -->
         <legend>Dodawanie artykułu na konferencje</legend>
 
@@ -25,7 +23,7 @@
         <div class="form-group">
             <label class="col-md-4 control-label" for="name">Nazwa</label>
             <div class="col-md-4">
-                <input id="name" name="name" placeholder="nazwa " class="form-control input-md" type="text">
+                <input id="name" name="name" placeholder="nazwa " class="form-control input-md" type="text" ng-model="article.name">
                 <span class="help-block">max 60 znakow</span>
             </div>
         </div>
@@ -34,7 +32,7 @@
         <div class="form-group">
             <label class="col-md-4 control-label" for="description">Opis poruszanego tematu</label>
             <div class="col-md-4">
-                <input id="description" name="description" class="input-file" type="file">
+                <input id="description" name="description" class="input-file" type="file" >
             </div>
         </div>
 
@@ -42,7 +40,7 @@
         <div class="form-group">
             <label class="col-md-4 control-label" for="content">Referat / Artykuł</label>
             <div class="col-md-4">
-                <input id="content" name="content" class="input-file" type="file">
+                <input id="content" name="content" class="input-file" type="file" >
             </div>
         </div>
 
@@ -50,9 +48,19 @@
         <div class="form-group">
             <label class="col-md-4 control-label" for="conference">Konferencja</label>
             <div class="col-md-5">
-                <select id="conference" name="conference" class="form-control">
-                    <option value="1">dane</option>
-                    <option value="2">dynamiczne</option>
+     <select id="conference" name="conference" class="form-control" ng-model="article.idConf">
+
+
+         <option  value="{{conference.id}}"  ng-repeat="conference in conferences">
+             <td>{{conference.id}}</td>
+             <td>{{conference.name}}</td>
+             <td>{{conference.dateStart}}</td>
+         </option>
+
+
+
+
+
                 </select>
             </div>
         </div>
@@ -61,7 +69,7 @@
         <div class="form-group">
             <label class="col-md-4 control-label" for="setContent">Dodaj zawartość</label>
             <div class="col-md-4">
-                <button id="setContent" name="setContent" class="btn btn-primary">Zatwierdz</button>
+                <button id="setContent" name="setContent" class="btn btn-primary"   ng-click="setArt(article)"  data-toggle="collapse" >Zatwierdz</button>
             </div>
         </div>
 
@@ -71,6 +79,31 @@
     </fieldset>
 </form>
 
+
+    <div id="demo" class="collapse">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+                <th>Nazwa:</th>
+                <th>Id:</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr ng-repeat="conference in conferences">
+                <td>{{conference.name}}</td>
+                <td>{{conference.id}}</td>
+
+
+            </tr>
+            </tbody>
+        </table>
+    </div>
+
+
+
+
+
+</div>
 
 </body>
 </html>

@@ -43,18 +43,18 @@ public class UserController {
          return "Zarejestrowano!";}
     }
 
-    @RequestMapping(value = "/deleteuser", method = RequestMethod.POST)
-    public void delUser(@RequestBody User user) {userDao.deleteUser(user);}
+//    @RequestMapping(value = "/deleteuser", method = RequestMethod.POST)
+//    public void delUser(@RequestBody User user) {userDao.deleteUser(user);}
 
-//    @ResponseBody
-//    @RequestMapping(value = "/loginuser", method = RequestMethod.POST ,produces="text/plain")
-//    public String loginUser (@RequestBody User user) {
-//        if(userDao.loginUser(user) == true)
-//            return "Zalogowano!";
-//        else
-//        return "Niepoprawne dane logowania!";
-//
-//    }
+    @ResponseBody
+    @RequestMapping(value = "/loginuser", method = RequestMethod.POST ,produces="text/plain")
+    public String loginUser (@RequestBody User user) {
+        if(userDao.loginUser(user) == true)
+            return "Zalogowano!";
+        else
+        return "Niepoprawne dane logowania!";
+
+    }
 
     @RequestMapping(value = "/checkname", method = RequestMethod.POST)
     public boolean checkName (@RequestBody User user) {return userDao.checkName(user);}

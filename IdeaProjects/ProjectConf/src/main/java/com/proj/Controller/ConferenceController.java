@@ -22,7 +22,7 @@ public class ConferenceController {
     @Autowired
     private ConferenceDao conferenceDao;
 
-    @RequestMapping(value = "/getconferences  ", method = RequestMethod.GET)
+    @RequestMapping(value = "/getconferences", method = RequestMethod.GET)
      public List<Conference> getConferences() {
        return conferenceDao.findAllConferences();
     }

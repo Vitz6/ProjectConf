@@ -10,20 +10,25 @@ import javax.persistence.*;
  */
 
 @Entity
-@Table(name="uzytkownik", uniqueConstraints={@UniqueConstraint(columnNames={"login"})})
+@Table(name="users")
 
 public class User {
 
+
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name="id_uzytkownik")
+    @Column(name="id")
     private int id;
 
-    @Column(name="login"  ,unique =true)
+
+    @Column(name="username"  ,unique =true)
     private String login;
 
-    @Column(name="haslo")
+    @Column(name="password")
     private String password;
+
+    @Column(name="enabled")
+    private int enabled;
 
     @Column(name="imie")
     private String firstName;
@@ -52,6 +57,13 @@ public class User {
     @Column(name="opis")
     private String description;
 
+    public int isEnabled() {
+        return enabled;
+    }
+
+    public void setEnabled(int enabled) {
+        this.enabled = enabled;
+    }
 
     public String getDescription() {
         return description;
@@ -125,13 +137,6 @@ public class User {
         this.firstName = firstName;
     }
 
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
 
     public String getPassword() {
         return password;

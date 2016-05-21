@@ -14,37 +14,37 @@ public class IndexController {
 
     @RequestMapping(value = "/", method = RequestMethod.GET)
     public String getIndex() {
-        return "static/html/index.html";
+        return "/static/html/index.html";
     }
 
     @RequestMapping(value = "/register", method = RequestMethod.GET)
     public String getRegisterForm() {
-        return "static/html/register.html";
+        return "/static/html/register.html";
     }
 
     @RequestMapping(value = "/login", method = RequestMethod.GET)
     public String getLoginForm() {
-        return "static/html/login.html";
+        return "/static/html/login.html";
     }
 
-    @RequestMapping(value = "/newconf", method = RequestMethod.GET)
+    @RequestMapping(value = "/admin/newconf", method = RequestMethod.GET)
     public String getNewConfForm() {
-        return "static/html/addconference.html";
+        return "/static/html/addconference.html";
     }
 
-    @RequestMapping(value = "/newreview", method = RequestMethod.GET)
+    @RequestMapping(value = "/reviewer/newreview", method = RequestMethod.GET)
     public String getNewReviewForm() {
-        return "static/html/addreview.html";
+        return "/static/html/addreview.html";
     }
 
-    @RequestMapping(value = "/relatereviewer", method = RequestMethod.GET)
+    @RequestMapping(value = "/admin/relatereviewer", method = RequestMethod.GET)
     public String getRelaterReviewerForm() {
-        return "static/html/relatereviewer.html";
+        return "/static/html/relatereviewer.html";
     }
 
-    @RequestMapping(value = "/newarticle", method = RequestMethod.GET)
+    @RequestMapping(value = "/user/newarticle", method = RequestMethod.GET)
     public String getNewArticleForm() {
-        return "static/html/addarticle.html";
+        return "/static/html/addarticle.html";
     }
 
 
