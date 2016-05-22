@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+<script type="text/javascript" src="static/scripts/index.js"></script>
+<script type="text/javascript" src="static/scripts/register.js"></script>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+        System zarzadzania
+    </title>
+
+
+
+
+</head>
+<body>
+<div ng-app="myApp">
+    <div class="col-sm-4">
+        <div ng-controller="showController" >
+
+            Niezalogowany:
+            <br>
+
+           <button type="submit" class="btn btn-default" onclick="window.location.href='/login'" data-toggle="collapse"
+                    data-target="#login"><span class="glyphicon glyphicon-user"></span> Zaloguj!
+            </button>
+
+            <button type="submit" class="btn btn-default" onclick="window.location.href='/register'" data-toggle="collapse"
+                    data-target="#register"><span class="glyphicon glyphicon-user"></span> Zarejestruj!
+            </button>
+
+            <br>
+
+            Admin:
+            <br>
+            <button type="submit" class="btn btn-default" onclick="window.location.href='/admin/newconf'" data-toggle="collapse"
+                    data-target="#none"><span class="glyphicon glyphicon-user"></span> Dodaj konferencje!
+            </button>
+
+            <button type="submit" class="btn btn-default" onclick="window.location.href='/admin/relatereviewer'" data-toggle="collapse"
+                    data-target="#none4"><span class="glyphicon glyphicon-user"></span> Przydziel recenzentów!
+            </button>
+
+
+            <button type="submit" class="btn btn-default" onclick="window.location.href='/admin/getusers'" data-toggle="collapse"
+                    data-target="#none2"><span class="glyphicon glyphicon-user"></span> Users!
+            </button>
+            <br>
+
+            Recenzent:
+            <br>
+
+            <button type="submit" class="btn btn-default" onclick="window.location.href='/reviewer/newreview'" data-toggle="collapse"
+                    data-target="#none3"><span class="glyphicon glyphicon-user"></span> Dodaj rezencje!
+            </button>
+
+            <br>
+
+            User:
+            <br>
+            <button type="submit" class="btn btn-default" onclick="window.location.href='/user/newarticle'" data-toggle="collapse"
+                    data-target="#none5"><span class="glyphicon glyphicon-user"></span> Dodaj artykuł!
+            </button>
+            <br>
+            Wyloguj:
+            <br>
+            <button type="submit" class="btn btn-default" onclick="window.location.href='/logout'" data-toggle="collapse"
+                    data-target="#none6"><span class="glyphicon glyphicon-user"></span> Logout!
+            </button>
+
+
+
+
+            <div id="demo" class="collapse">
+                <table class="table table-striped">
+                    <thead>
+                    <tr>
+                        <th>Id:</th>
+                        <th>Imię:</th>
+                        <th>Wiek:</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr ng-repeat="comment in comments">
+                        <td>{{comment.uzytkownik_id_uzytkownika}}</td>
+                        <td>{{comment.zawartosc}}</td>
+                        <td>{{comment.czas_dodania}}</td>
+                        <td>{{comment.id_komentarza}}</td>
+
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+
+
+        </div>
+    </div>
+</div>
+</body>
+</html>

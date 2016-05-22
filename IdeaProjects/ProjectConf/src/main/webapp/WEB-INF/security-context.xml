@@ -23,7 +23,7 @@
         <security:csrf disabled="true"/>
         <security:form-login login-page='/login'
                              login-processing-url="/perform_login"
-                             default-target-url="/"
+                             default-target-url="/site"
                              authentication-failure-url="/denied"
                              always-use-default-target="true"/>
         <security:logout logout-url="/logout" delete-cookies="JSESSIONID"/>

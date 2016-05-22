@@ -47,5 +47,20 @@ public class IndexController {
         return "/static/html/addarticle.html";
     }
 
+    @RequestMapping(value = "/admin/users", method = RequestMethod.GET)
+    public String getUsers() {
+        return "/static/html/users.html";
+    }
+
+    @RequestMapping(value = "/admin/panel", method = RequestMethod.GET)
+    public String getAdminPanel() {
+        return "/static/html/adminpanel.htm";
+    }
+
+    @RequestMapping(value = "/site", method = RequestMethod.GET) //frontpage after login
+    public String getSite() {
+        return "/static/html/site.html";
+    }
+
 
 }

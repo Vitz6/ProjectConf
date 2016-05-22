@@ -77,8 +77,10 @@ public class UserDao {
     }
 
 
-
-
+    @Transactional
+    public void updateUser(User user) {
+        entityManager.merge(user);
+    }
 
 
     @Transactional
